@@ -1,0 +1,37 @@
+CHƯƠNG 1 : TỔNG QUAN VỀ HỆ ĐIỀU HÀNH 
+1. Khái niệm hệ điều hành
+- Cấu trúc phân lớp của hệ thống tính toán
+	+ Các thành phần của hệ thống tính toán : Application programs, System programs, Hardware, User
+	+ HĐH : Nằm giữa phần cứng của hệ thống và các chương trình ứng dụng, để cung cấp một môi trường để người
+sử dụng có thể thực hiện các chương trình ứng dụng làm cho máy tính dễ sử dụng hơn, thuận lợi hơn và hiệu quả hơn.
+- Chức năng hệ điều hành
+	+ Giả lập một máy ảo.
+	+ Quản lý tài nguyên của hệ thống.
+2. Lịch sử phát triển HĐH
+3. Định nghĩa và phân loại HĐH
+Trên các góc độ quan sát khác nhau sẽ có các định nghĩa khác nhau 
+- Người sử dụng : HĐH là chương trình phục vụ khai thác hệ thống tính toán một cách thuận lợi
+- Người quản lý : HĐH là chương trình phục vụ quản lý chặt chẽ và khai thác tối ưu các tài nguyên của hệ thống.
+- QĐ kỹ thuật : HĐH là một chương trình trang bị cho một máy tính cụ thể để tạo ra máy tính logic mới với tài nguyên
+mới và khả năng mới.
+- QĐ hệ thống : HĐH là một hệ thống mô hình hóa, mô phỏng hoạt động của máy tính, của người sử dụng và của các thao tác 
+viên, hoạt động trong chế độ đối thoại nhằm tạo môi trường khai thác thuận lợi hệ thống máy tính và quản lý tối ưu tài
+nguyên của hệ thống.
+Phân loại : 
+- Hệ thống xử lý theo lô đơn chương trình
+	Thực hiện các chương trình (Job) lần lượt theo những chỉ thị đã định trước, khi 1 Job kết thúc hệ thống tự động 
+thực hiện những Job tiếp theo mà không cần sự can thiệp từ quên ngoài.
+	-> Đòi hỏi tổ chức hàng đợi công việc (job queue)
+	-> Vấn đề : Khi nhập thiết bị vào ra -> Processor rơi vào trạng thái chờ đợi
+- Hệ thống xử lý theo lô đa chương trình 
+	Cho phép thực hiện nhiều chương trình đồng thời
+	-> Ưu điểm : Tiết kiệm bộ nhớ (không cần nạp toàn bộ chương trình vào bộ nhớ), hạn chế thời gian rảnh rỗi của 
+Processor.
+- Hệ thống phân chia thời gian thực 
+	Chia sẻ thời gian của Processor cho các chương trình/tiến trình đang sẵn sàng thực hiện
+	Thường được gọi : hệ điều hành đa nhiệm ( Windows)
+- Hệ thống xử lý thời gian thực : Được sử dụng chủ yếu trong lĩnh vực điều khiển
+- Hệ thống song song : Xây dựng cho hệ thống có nhiều bộ vi xử lý. 
+- Hệ thống phân tán : Mỗi bộ xử lý có một bộ nhớ cục riêng và trao đổi thông qua các đường truyền thông.
+	-> Hệ thống phân tán được sử dụng để : Chia sẻ tài nguyên, tăng tốc độ tính toán, an toàn.
+

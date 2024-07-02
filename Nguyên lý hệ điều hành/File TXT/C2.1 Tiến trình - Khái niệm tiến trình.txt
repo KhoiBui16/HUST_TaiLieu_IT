@@ -1,0 +1,38 @@
+CHƯƠNG 2 : QUẢN LÝ TIẾN TRÌNH		
+*Tiến trình : Chương trình đang được thực hiện được cung cấp tài nguyên khi bắt đầu và trong khi thực hiện gọi là tiến trình 
+	Hệ thống là tập các tiến trình đồng thời : 
+		+ Tiến trình hệ điều hành : Thực hiện mã lệnh hệ thống 
+		+ Tiến trình người dùng : Thực hiện mã lệnh người dùng
+	Trách nhiệm của HĐH : Đảm bảo hoạt động của tiến trình và tiểu trình (luồng)
+1. Tiến trình (Process) 
+*Khái niệm tiến trình
+- K/n : 1) là một dãy các chuyên đổi trạng thái của hệ thống, chuyển từ trạng thái này sang trạng thái khác được thực hiện theo yêu
+cầu nằm trong chương trình của người sử dụng, được xuất phát từ một trạng thái ban đầu.
+	2) Là chương trình đang được thực hiện (tài nguyên tối thiểu cần có : bộ nhớ cho mã chương trình và dữ liệu, các thanh ghi 
+của Processor phục vụ cho quá trình thực hiện các chương trình).
+	   Tiến trình >< chương trình 
+	   Chương trình : là một thực thể thụ động. Bao gồm : mã chương trình, Dữ liệu(biến được lưu trữ và sử dụng trong bộ nhớ),
+thư viện liên kết động. Khi chương trình thực hiện, tài nguyên tối thiểu cần có là bộ nhớ và các thanh ghi.
+	   Tiến trình : là thực thể chủ động (bộ đếm lệnh, tập tài nguyên)  
+- Dịch và thực hiện một chương trình : HĐH khởi tạo một tiến trình và phân phối vùng nhớ cho nó.
+Bắt đầu thực hiện tại _Start() (hàm này gọi tới hàm main()), khi hàm main() kết thúc OS gọi tới hàm _exit() để hủy bỏ tiến trình 
+và thu hồi tài nguyên. => Tiến trình là chương trình đang thực thi
+- Trạng thái của tiến trình : Khi thực hiện tiến trình thay đổi trạng thái, có 5 trạng thái của tiến trình 
+	+ Khởi tạo (New) : Tiến trình đang được khởi tạo
+	+ Sẵn sàng (Ready) : Tiến trình đang đợi sử dụng Process vật lý
+	+ Thực hiện (Running) : Các câu lệnh của tiến trình đang được thực hiện
+	+ Chờ đợi ( Waiting) : Tiến trình đang chờ đợi một sự kiện nào đó xuất hiện (sự hoàn thành thao tác vào ra)
+	+ Kết thúc (Terminated) : Tiến trình thực hiện xong
+	=> Trạng thái của tiến trình là một phần trong hoạt động hiện tại của tiến trình
+- Lưu đồ thay đổi trạng thái của tiến trình (Slide 14/340 Chương 2)
+	Hệ thống có 1 Processor : 
+		+ Có duy nhất một tiến trình ở trạng thái thực hiện 
+		+ Có thể có nhiều tiến trình ở trạng thái chờ đợi hoặc sẵn sàng 
+- Khối điều khiển tiến trình PCB (Process Control Block) 
+	Mỗi tiến trình được thể hiện trong một hệ thống bởi một khối điều khiển tiến trình
+	PCB : cấu trúc thông tin cho phép xác định duy nhất một tiến trình
+- Tiến trình đơn luồng và tiến trình đa luồng 
+	Tiến trình đơn luồng : Là tiến trình thực hiện chỉ một luồng thực thi
+		=> Cho phép thực hiện 1 nhiệm vụ tại 1 thời điểm
+	Tiến trình đa luồng : Là tiến trình có nhiều luồng thực thi
+		=> Cho phép thực hiện nhiều hơn một nhiệm vụ tại một thời điểm

@@ -1,0 +1,27 @@
+CHƯƠNG 2 <TIẾP>
+1.<TIẾP>
+*Điều phối tiến trình
+#Mục đích : Sử dụng tối đa thời gian của CPU
+	=> Cần có nhiều tiến trình trong hệ thống
+#Vấn đề : Luân chuyển CPU giữa các tiến trình
+	=> Phải có hàng đợi cho các tiến trinh
+- Hệ thống có nhiều hàng đợi dành cho tiến trình (Slide 21/340): 
+	+ Job-queue : Tập các tiến trình trong hệ thống 
+	+ Ready-queue : Tập các tiến trình tồn tại trong bộ nhớ, đang sẵn sàng và chờ đợi để được thực hiện
+	+ Devices queue : Tập các tiến trình đang chờ đợi một thiết bị vào ra. Phân biệt hàng đợi cho từng thiết bị
+- Tiến trình mới tạo, được đặt trong hàng đợi sẵn sàng và đợi cho tới khi được lựa chọn để thực hiện 
+- Tiến trình đã được chọn và đang thực hiện : 
+	1) Đưa ra một y/c vào ra : đợi trong một hàng đợi thiết bị
+	2) Tạo một tiến trình con và đợi tiến trình con kết thúc
+	3) Hết thời gian sử dụng CPU phải quay lại hàng đợi sẵn sàng
+- Tiến trình tiếp tục chu kì (sẵn sàng, thực hiện, chờ đợi) cho tới khi kết thúc 
+- Bộ điều phối ( Scheduler) : lựa chọn tiến trình trong các hàng đợi 
+	+ Điều phối công việc (Job scheduler, Long-term scheduler)
+		=> Vấn đề : Các chương trình thiên về vào/ra -> ít thời gian CPU, các tiến trình thiên về tính toán -> nhiều thời gian
+của CPU
+	+ Điều phối CPU (CPU scheduler, Short-term scheduler) : Job Scheduler sẽ sắp xếp lại vị trí các Job rồi gửi sang Process 
+Scheduler (Slide 32/340)
+	+ Chuyển ngữ cảnh ( Context switch)
+	+ Hoán đổi tiến trình (Medium-term Scheduler)
+		=> Nhiệm vụ : đưa tiến trình ra khỏi bộ nhớ, sau đó đưa tiến trình quay lại và tiếp tục thực hiện 
+		=> Mục đích : giải phóng bộ nhớ, tạo vùng nhớ tự do rộng hơn

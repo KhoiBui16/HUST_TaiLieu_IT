@@ -1,0 +1,24 @@
+CHƯƠNG 1 <TIẾP>
+5. Cấu trúc HĐH
+5.1 Các thành phần của hệ thống
+- Quản lý tiến trình 
+- Quán lý bộ nhớ chính
+- Quản lý hệ thống vào ra
+- Quản lý file
+- Quản lý bộ nhớ lưu trữ
+- Hệ thống trao đổi dữ liệu ( hệ thống phân tán)
+- Bảo vệ hệ thống 
+- Giao diện người dùng
+5.2 Dịch vụ HĐH
+Dịch vụ chính yếu : 
+- Thi hành chương trình 
+- Thao tác nhập xuất
+- Thao tác trên hệ thống tập tin
+- Truyền thông
+- Phát hiện lỗi
+Dịch vụ phụ trợ : 
+- Cung cấp tài nguyên
+- Thống kê báo cáo
+- Bảo vệ
+5.3 Lời gọi hệ thống : tạo môi trường giao tiếp giữa chương trình của người sử dụng và HĐH
+5.4 Các cấu trúc hệ thống 

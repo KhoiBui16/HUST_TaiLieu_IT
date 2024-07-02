@@ -1,0 +1,34 @@
+CHƯƠNG 1 <TIẾP>
+4. Các khái niệm trong HĐH
+- Tiến trình (Process) : là một chương trình đang thực hiện
+	Tiến trình >< chương trình 
+	Chương trình : Thực thể thụ động, chứa đựng các chỉ thị điều khiển của máy tính thực hiện một nhiệm vụ nào đó.
+	Tiến trình : Trạng thái động của chương trình.
+	-> 1 tiến trình có thê bao gồm nhiều luồng ( tiểu trình)
+- Luồng (Thread) : là chuỗi (luồng) lệnh được thực hiện trong tiến trình
+	Tiến trình chỉ chứa 1 luồng : (Heavyweight Process)
+	Tiến trình gồm nhiều luồng : (Lightweighy Process)
+	Mô hình đa luồng : (Multi_Threading) 
+		Các luồng hoạt động song song, chia sẻ biến toàn cục của tiến trình.
+- Tài nguyên hệ thống : Là tất cả những gì cần thiết cho một tiến trình có thể thực hiện được.
+	Không gian : không gian lưu trữ của hệ thống 
+	Thời gian : thời gian thực hiện lệnh/truy xuất dữ liệu.
+ *Tài nguyên hệ thống bao gồm : 
+	+ Bộ nhớ : phân biệt bộ nhớ (vùng vật lý chứa dữ liệu) và truy cập tới bộ nhớ (quá trình tìm đến dữ liệu trên
+bộ nhớ)
+	+ Processor (Vi xử lý) : 
+	+ Thiết bị ngoại vi
+ *Phân loại tài nguyên : 
+    Kiểu tài nguyên : 
+	+ Tài nguyên vật lý : các thiết bị vật lý
+	+ Tài nguyên logic : biến nhớ, thiết bị ảo
+    Khả năng dùng chung : 
+    Tài nguyên ảo : VD Máy in ảo
+- Bộ xử lý lệnh (Shell)
+	Tiến trình đặc biệt : nơi giao tiếp giữa người dùng và HĐH
+	Nhiệm vụ : nhận lệnh của người sử dụng, phân tích lệnh, phát sinh tiến trình mới để thực hiện yêu cầu của lệnh.
+	Nhận lệnh : thông qua cơ chế dòng lệnh
+- Nhân hệ thống (Kernel)
+	User -> Shell -> Kernel -> Hardware
+	Là một chương trình máy tính ở mức thấp nhất, giao tiếp với phần cứng, điều khiển mọi thứ khác, nó là hạt nhân
+trái tim của HĐH. Chuyên đổi các yêu cầu đầu vào/đầu ra thành một tập lệnh cho CPU

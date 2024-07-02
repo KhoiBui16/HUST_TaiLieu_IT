@@ -1,0 +1,26 @@
+CHƯƠNG 2 <TIẾP>
+1. <TIẾP>
+*Thao tác trên tiến trình
+(+) Tạo tiến trình 
+	- Tiến trình có thể tạo nhiều tiến trình mới cùng hoạt động (CreateProcess(), fork())
+		+ tiến trình tạo : tiến trình cha
+		+ tiến trình được tạo : tiến trình con
+	- Tiến trình con có thể tạo nhiều tiến trình con khác -> Cây tiến trình 
+	- Vấn đề phân phối tài nguyên 
+		+ tiến trình con lấy từ HĐH
+		+ tiến trình con lấy từ tiến trình cha (tất cả, hoặc 1 phần)
+	- Vấn đề thực hiện 
+		+ tiến trình cha tiếp tục thực hiện đồng thời với tiến trình con
+		+ tiến trình cha chờ tiến trình con kết thúc rồi thực hiện
+(+) Kết thúc tiến trình
+	- Hoàn thành câu lệnh cuối và yêu cầu HĐH xóa nó (exit)
+		+ gửi trả dữ liệu tới tiến trình cha
+		+ các tài nguyên đã được cung cấp trả lại hệ thống
+	- Tiến trình cha có thể kết thúc sự thực hiện của tiến trình con 
+		+ TT cha phải biết định danh của tiến trình con 
+		+ Sử dụng lời gọi hệ thống (abort)
+	- Tiến trình cha kết thúc tiến trình con khi :
+		+ TT con sử dụng vượt quá tài nguyên được cấp 
+		+ Nhiệm vụ cung cấp cho tiến trình con không còn cần thiết nữa 
+		+ TT cha kết thúc và HĐH không cho phép TT con được thực hiện
+			=> Cascading termination

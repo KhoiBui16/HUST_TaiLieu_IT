@@ -1,0 +1,45 @@
+CHƯƠNG 2 <TIẾP>
+1. <TIẾP>
+*Hợp tác tiến trình 
+- Phân loại tiến trình 
+	+ Các TT tuần tự : Điểm bắt đầu của TT này nằm sau điểm kết thúc của tiến trình kia 
+	+ Các TT song song : Điểm bắt đầu của TT này nằm giữa điểm kết thúc của TT kia 
+		-> Độc lập : Không bị ảnh hưởng hoặc bị ảnh hưởng bởi các TT khác trong hệ thống 
+		-> Có hợp tác : Ảnh hưởng hoặc bị ảnh hưởng bởi các TT khác trong hệ thống 
+- Hợp tác tiến trình 
+	+ Mục đích : Chia sẻ thông tin, tăng tốc độ tính toán, Module hóa, Tiện dụng 
+	+ Đòi hỏi cơ chế cho phép : Truyền thông giữa các tiến trình, đồng bộ hóa hoạt động của các TT
+- Bài toán người sản xuất (Producer) - Người tiêu thụ (Consumer)
+	Slide 47-48-49-50
+
+*Truyền thông liên tiến trình 
+- Trao đổi giữa các tiến trình 
+	+ Mô hình bộ nhớ dùng chung : Các tiến trình chia sẻ vùng nhớ chính, Mã cài đặt được viết tường minh bởi người lập trình ứng dụng,
+	+ Mô hình truyền thông liên tiến trình (Interprocess communication) : Là cơ chế cho phép các TT truyền thông và đồng bộ các hoạt 
+động, thường được sử dụng trong các hệ phân tán khi các TT truyền thông nằm trên các máy khác nhau, đảm bảo bởi hệ thống truyền thông 
+điệp
+- Hệ thống truyền thông điệp : Cho phép các tiến trình trao đổi với nhau thông qua các biến dùng chung
+	+ Yêu câu 2 thao tác cơ bản : Send(msg), Receive(msg)
+	+ Nếu 2 tiến trình P và Q muốn trao đổi, chúng cần : Thiết lập 1 liên kết truyền thông giữa chúng, Trao đổi các messages nhờ các
+thao tác Send/Receive
+- Hệ thống truyền thông điệp và bài toán Producer Comsumer
+	+ Truyền thông trực tiếp : 
+		# Các TT phải gọi tên các TT nhận/gửi 1 cách tường minh 
+			(Send(P,Message)) - gửi 1 thông báo tới tiến trình P
+			(Receive(Q,Message)) - nhận 1 thông báo từ tiến trình Q
+		# Tính chất của liên kết truyền thông : Được thiết lập tự động, 1 liên kết gắn với 1 cặp TT truyền thông, chỉ tồn tại 1 LK
+giữa cặp tiến trình, liên kết là 1 chiều nhưng thường 2 chiều
+	+ Truyền thông gián tiếp : Casc thông điệp được gửi/nhận tới/từ các hòm thư (mailboxes), cổng (ports). Mỗi hòm thư có định danh
+duy nhất , các TT có thể trao đổi nếu chúng dùng chung hòm thư.
+		# Tính chất các liên kết : Được thiết lập chỉ khi các TT dùng chung hòm thư, 1 LK có thể gắn với nhiều tiến trình, mỗi cặp
+TT có thể dùng chung nheiefu liên kết truyền thông, liên kết có thể 1 hay 2 chiều.
+		# Các thao tác : Tạo hòm thư, Gửi/nhận thông báo qua hòm thư : Send(A,msg), Receive(A,msg), Hủy bỏ hòm thư.
+- Vấn đề đồng bộ hóa : 
+	+ Truyền thông điệp có thể phải chờ đợi (Blocking) hoặc không chờ đợi (non Blocking) : Blocking - truyền thông đồng bộ, non 
+Blocking - truyền thông không đồng bộ.
+	+ Các thủ tục send() và receive() có thể phải chờ đợi hoặc không. 
+		# Blocking Send() : TT gửi thông báo và chờ tới khi msg được nhận bởi TT nhận hoặc bởi hòm thư.
+		# non Blocking Send() : TT gửi thông báo xong và tiếp tục làm việc ( chả cần biết thông báo gửi thế nào)
+		# Blocking receive() : TT nhận phải đợi cho tới khi có thông điệp
+		# non Blocking receive() : TT nhận trả về một thông điệp có giá trị, hoặc 1 giá trị null
+		

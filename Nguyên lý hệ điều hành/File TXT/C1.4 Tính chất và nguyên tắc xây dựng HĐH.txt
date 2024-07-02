@@ -1,0 +1,17 @@
+CHƯƠNG 1 <TIẾP>
+6. Tính chất cơ bản của HĐH
+- Độ tin cậy cao : mọi hoạt động/thông báo của HĐH phải chuẩn xác
+- An toàn : dữ liệu và chương trình phải được bảo vệ
+- Hiệu quả : các tài nguyên phải được khai thác triệt để, hệ thống cần phải duy trì được tính đồng bộ
+- Tổng quát theo thời gian : hệ thống phải có tính kế thừa, hệ thống cần phải có khả năng thích nghi với
+những thay đổi có thể xảy ra
+- Thuận tiện : dễ sử dụng, nhiều mức với hiệu quả khác nhau, có hệ thống trợ giúp phong phú
+7. Vấn đề xây dựng HĐH
+Nguyên tắc xây dựng hệ điều hành : 
+- Nguyên tắc modul
+- Nguyên tắc tương đối trong định vị
+- Nguyên tắc macroprocessor
+- Nguyên tắc khởi tạo trong cài đặt
+- Nguyên tắc lặp chức năng
+- Nguyên tắc giá trị chuẩn
+- Nguyên tắc bảo vệ nhiều mức

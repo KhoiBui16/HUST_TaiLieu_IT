@@ -1,0 +1,67 @@
+CHƯƠNG 2 : <TIẾP>
+4.Tài nguyên găng và điều độ tiến trình 
+4.1 Khái niệm tài nguyên găng 
+* Khái niệm : 
+	- Là những tài nguyên hạn chế về khả năng dùng chung
+	- Cần đồng thời cho nhiều tiến trình 
+	- Có thể là thiết bị vật lí hay là dữ liệu dùng chung 
+	=> Vấn đề : Dùng chung tài nguyên găng có thể dẫn tới việc không đảm bảo tính toàn vẹn dữ liệu  -> Đòi hỏi cơ chế đồng bộ hóa 
+	các tiến trình
+* Điều kiện cạnh tranh : Nhiều TT cùng truy cập vào trật tự của các truy nhập -> Làm cho chương trình không xác định
+* Ngăn ngừa ĐK cạnh tranh : 
+	- Chỉ 1 TT truy nhập tới dữ liệu dùng chung tại 1 thờ điểm 
+	- Đoạn lệnh truy nhập tới dữ liệu dùng chung trong các TT phải thực hiện theo thứ tự xác định
+* Đoạn găng : 
+	- Là chương trình sử dụng tài nguyên găng ( Đoạn c.trình dùng truy nhập và thao tác trên dữ liệu dùng chung)
+	- Khi có nhiều TT sử dụng tài nguyên găng thì phải điều độ
+		-> Mục đích : đảm bảo chỉ có 1 TT tại 1 thời điểm sử dụng tài nguyên găng ( không có quá 1 TT nằm trong đoạn găng)
+* Yêu cầu của chương trình điều độ : 
+	- Loại trừ lẫn nhau : Mỗi thời điểm, tài nguyên găng không phải phục vụ 1 số lượng TT vượt quá khả năng của nó 
+		-> VD : 1 TT đang trong đoạn găng thì không TT nào khác được vào đoạn găng
+	- Tiến triển : Nếu tài nguyên găng còn khả năng phục vụ mà vẫn có TT muốn vào đoạn găng thì TT đó phải được sử dụng tài nguyên
+	găng
+	- Chờ đợi hữu hạn : Nếu tài nguyên găng hết khả năng phục vụ mà có tiến trình muốn vào đoạn găng thì phải xếp vào hàng đợi và
+	chờ đợi trong thời gian hữu hạn để được vào đoạn găng
+* Quy ước : [?] - cứ thấy thế nào ý ? =))) 
+* Các phương pháp điều độ : 
+	- Phương pháp khóa trong 
+	- Phương pháp kiểm tra và xác lập
+	- Kỹ thuật đèn báo
+	- Monitor
+4.2 Phương pháp khóa trong 
+* Nguyên tắc : 
+	- Mỗi TT dùng 1 byte trong bộ nhớ CHUNG để làm khóa : TT vào đoạn găng -> đóng khóa, TT thoát khỏi đoạn găng -> mở khóa, TT muốn
+	vào đoạn găng phải kiểm tra khóa của TT còn lại, đang khóa -> đợi, khóa mở -> được quyền vào đoạn găng
+* Thuật toán điều độ & Thuật toán Dekker
+4.3 Phương pháp kiểm tra và xác lập
+* Nguyễn tắc : 
+	- Sử dụng sự hỗ trợ từ phần cứng 
+	- Phần cứng cung cấp các câu lệnh xử lí không tách rời 
+	-> Xử lí không tách rời là gì ? Khối lệnh không thể bị ngắt trong khi đang thực hiện, khối lệnh gọi đồng thời sẽ theo một thứ tự 
+	bất kì
+* Thuật toán với TestAndSet và thuật toán với Swap
+4.4 Kĩ thuật đèn báo (Semaphore)
+* Khái niệm : 
+	- Là một biến nguyên S, khởi tạo bằng số khả năng phục vụ của tài nguyên nó điều độ
+	- Chỉ có thể thay đổi giá trị bằng 2 thao tác cơ bản P và V
+		+ Thao tác P(S) ( Wait(S) -> S--)
+		+ Thao tác V(S) ( Sign(S) -> S++)
+	- Đèn báo là công cụ điều độ tổng quát  
+* Nhận xét : 
+	- Dễ dàng cho hệ thống phức tạp
+	- Không tồn tại hiện tượng chờ đợi tích cực
+	- Hiệu quả sử dụng phụ thuộc vào người dùng
+	- Các phép xử lí PS, VS không phân chia được
+		=> Bản thân PS, VS cũng là 2 tài nguyên găng => cần được điều độ
+4.5 Đồng bộ tiến trình
+	Các ví dụ về đồng bộ tiến trình, các bài toán : 
+		- Bài toán người sản xuất - người tiêu thụ ( Producer - Consumer)
+		- Bữa ăn tối của triết gia ( Dining Philosophers)	
+		- Người đọc và biên tập viên ( Readers - Writers)
+		- Người thợ cắt tóc ngủ gật ( Sleeping Barber)
+		- Bathroom Problem
+		- Đồng bộ theo Barriers
+4.6 Công cụ điều độ cao cấp 
+* Giới thiệu : là một kiểu dữ liệu đặc biệt, được đề xuất bởi HOARE 1974. Bao gồm các thủ tục, 
+dữ liệu cục bộ, đoạn mã khởi tạo. 
+
